@@ -1,0 +1,23 @@
+{
+    "name": "gr403_avgan/progect-pncc",
+    "description": "desc",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "gr403avgan",
+            "email": "georg.awdeew2017@yandex.ru"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.4 | ^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Src\\": "core/Src/",
+            "": "app/"
+        }
+    }
+
+}
