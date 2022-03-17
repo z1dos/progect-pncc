@@ -2,6 +2,7 @@
 
 namespace Controller;
 
+use Model\Books;
 use Model\Post;
 use Src\View;
 use Src\Request;
@@ -12,8 +13,28 @@ class Site
 {
     public function index(Request $request): string
     {
-        $posts = Post::where('id', $request->id)->get();
+        $posts = Post::all();
         return (new View())->render('site.post', ['posts' => $posts]);
+    }
+
+    public function books(Request $request): string
+    {
+        $books = Books::all();
+        return (new View())->render('site.books', ['books' => $books]);
+    }
+
+    public function showUsers(Request $request): string
+    {
+        $users = User::all();
+        return (new View())->render('site.showUsers', ['users' => $users]);
+    }
+
+    public function addBooks(Request $request): string
+    {
+        if ($request->method === 'POST' && Books::create($request->all())) {
+            app()->route->redirect('/books');
+        }
+        return new View('site.addBook');
     }
 
     public function hello(): string
