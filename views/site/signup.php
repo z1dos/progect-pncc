@@ -5,8 +5,7 @@
     <p>Имя <input type="text" name="name"></p>
     <p>Отчество <input type="text" name="patronymic"></p>
     <p>Адрес <input type="text" name="address"></p>
-    <p>Номер телефона <input type="text" name="phone_number"></p>
-    <p>Читательский билет <input type="text" name="library_card"></p>
+    <p>Номер телефона <input type="tel" name="phone_number"></p>
     <p>Логин <input type="text" name="login"></p>
     <p>Пароль <input type="password" name="password"></p>
     <button>Зарегистрироваться</button>

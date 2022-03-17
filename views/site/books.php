@@ -2,7 +2,7 @@
 <ol>
     <?php
     foreach ($books as $book) {
-        echo $book->id . ')' . $book->title .'<br>';
+        echo '<li>' . $book->title . '</li>';
     }
     ?>
 </ol>
