@@ -13,8 +13,14 @@ class User extends Model implements IdentityInterface
     public $timestamps = false;
     protected $fillable = [
         'name',
+        'surname',
+        'patronymic',
         'login',
-        'password'
+        'password',
+        'isAdmin',
+        'address',
+        'phone_number',
+        'library_card'
     ];
 
     protected static function booted()
