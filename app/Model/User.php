@@ -20,7 +20,6 @@ class User extends Model implements IdentityInterface
         'isAdmin',
         'address',
         'phone_number',
-        'library_card'
     ];
 
     protected static function booted()
