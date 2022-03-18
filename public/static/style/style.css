@@ -1,5 +1,68 @@
-*{
+* {
     margin: 0;
     padding: 0;
     outline: none;
+}
+
+body {
+    font-family: Roboto;
+}
+
+header > nav {
+    display: flex;
+    font-size: 20px;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    height: 100px;
+    background-color: #000000;
+}
+
+header > nav > a {
+    color: #ffffff;
+    display: flex;
+    flex-grow: 0.5;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.view-books-all {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.view-books{
+    display: flex;
+    width: 90%;
+    border: 1px solid black;
+    margin-top: 10px;
+}
+
+.view-books-id{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-grow: 1;
+}
+
+.view-books-other{
+    width: 70%;
+    flex-grow: 2;
+    display: flex;
+    flex-direction: column;
 }
