@@ -22,6 +22,11 @@ class User extends Model implements IdentityInterface
         'phone_number',
     ];
 
+    public function isAdmin()
+    {
+        return $this->isAdmin === 1;
+    }
+
     protected static function booted()
     {
         static::created(function ($user) {

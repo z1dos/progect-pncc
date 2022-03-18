@@ -13,5 +13,8 @@ class AuthMiddleware
         if (!Auth::check()) {
             app()->route->redirect('/login');
         }
+        if(!Auth::user()->isAdmin()){
+            app()->route->redirect('/profile');
+        }
     }
 }

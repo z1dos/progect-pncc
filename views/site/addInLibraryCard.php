@@ -2,10 +2,10 @@
 <h3><?= $message ?? ''; ?></h3>
 
 <form method="post">
-    <p>Номер читательского билета <select name="id_reader">
+    <p>Логин пользователя <select name="id_reader">
             <?php
             foreach ($users as $user ) {
-                echo '<option >' . $user->num_lybrary_card  . '</option >';
+                echo '<option >' . $user->login  . '</option >';
             }
             ?>
         </select></p>

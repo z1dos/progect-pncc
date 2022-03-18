@@ -30,6 +30,14 @@ class Site
         return (new View())->render('site.showUsers', ['users' => $users]);
     }
 
+    public function profile(Request $request): string
+    {
+        $library_cards = LibraryCard::all();
+        $books = Books::all();
+        $users = User::all();
+        return (new View())->render('site.profile', ['users' => $users, 'library_cards' => $library_cards, 'books' => $books]);
+    }
+
     public function addBooks(Request $request): string
     {
         if ($request->method === 'POST' && Books::create($request->all())) {
