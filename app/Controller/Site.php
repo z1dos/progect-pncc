@@ -32,7 +32,7 @@ class Site
 
     public function profile(Request $request): string
     {
-        $library_cards = LibraryCard::all();
+        $library_cards = LibraryCard::where('id_reader', $request->id_reader)->get();
         $books = Books::all();
         $users = User::all();
         return (new View())->render('site.profile', ['users' => $users, 'library_cards' => $library_cards, 'books' => $books]);
