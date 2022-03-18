@@ -35,7 +35,11 @@ class Site
         $library_cards = LibraryCard::where('id_reader', $request->id_reader)->get();
         $books = Books::all();
         $users = User::all();
-        return (new View())->render('site.profile', ['users' => $users, 'library_cards' => $library_cards, 'books' => $books]);
+        return (new View())->render('site.profile', [
+            'users' => $users,
+            'library_cards' => $library_cards,
+            'books' => $books
+        ]);
     }
 
     public function addBooks(Request $request): string

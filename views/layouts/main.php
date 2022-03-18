@@ -22,7 +22,6 @@
             <a href="<?= app()->route->getUrl('/profile') ?>">Профиль</a>
             <a href="<?= app()->route->getUrl('/showUsers') ?>">Пользователи</a>
             <a href="<?= app()->route->getUrl('/books') ?>">Книги</a>
-            <a href="<?= app()->route->getUrl('/addBooks') ?>">Добавить книги</a>
             <a href="<?= app()->route->getUrl('/logout') ?>">Выход</a>
         <?php
         else:
