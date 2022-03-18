@@ -3,6 +3,7 @@
 namespace Controller;
 
 use Model\Books;
+use Model\LibraryCard;
 use Model\Post;
 use Src\View;
 use Src\Request;
@@ -35,6 +36,17 @@ class Site
             app()->route->redirect('/books');
         }
         return new View('site.addBook');
+    }
+
+    public function addInLibraryCard(Request $request): string
+    {
+        $users = User::all();
+        $books = Books::all();
+        $library_cards = LibraryCard::all();
+        if ($request->method === 'POST' && LibraryCard::create($request->all())) {
+            app()->route->redirect('/books');
+        }
+        return (new View())->render('site.addInLibraryCard', ['library_cards' => $library_cards, 'users' => $users, 'books' => $books]);
     }
 
     public function hello(): string
