@@ -92,12 +92,13 @@ h2 {
     margin: 20px 0px 20px 0px;
 }
 
-.view-showUsers-forAdmin > div > p{
+.view-showUsers-forAdmin > div > p {
     display: flex;
     justify-content: center;
     flex-grow: 1;
     width: 10%;
 }
+
 .view-showUsers-forAdmin > a {
     height: 40px;
     display: flex;
@@ -150,7 +151,7 @@ h2 {
     padding: 5px 10px 5px 10px;
 }
 
-.view-profile > div > p{
+.view-profile > div > p {
     display: flex;
     justify-content: center;
     flex-grow: 1;
@@ -163,4 +164,40 @@ h2 {
     flex-grow: 1;
     width: 10%;
 }
+
 /*end for profile*/
+
+/*for form*/
+.view-form {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.view-form > form {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+}
+
+.view-form > form > p {
+    margin: 10px;
+}
+
+.view-form > form > p > input {
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+.view-form > form > button {
+    background-color: #b7b0b0;
+    border-radius: 1em;
+    width: 90%;
+    margin-top: 10px;
+    font-size: 18px;
+    border: none;
+}
+
+/*end form*/

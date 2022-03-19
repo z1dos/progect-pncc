@@ -7,7 +7,7 @@
         <p>Дата сдачи </p>
         <p>Сдано </p>
         <?php
-        if (app()->auth::user()->isAdmin()){
+        if (app()->auth::user()->isAdmin()) {
             echo '<p>Поменять </p>';
         }
         ?>
@@ -29,8 +29,9 @@
                 '<option>Да</option> ' .
                 '</select>' .
                 '<button>Поменять</button>' .
-                '</form>' . '</div>';
+                '</form>';
         }
+        echo '</div>';
     }
     ?>
 </div>
