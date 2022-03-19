@@ -46,23 +46,86 @@ h2 {
     align-items: center;
 }
 
-.view-books{
+.view-books {
+    height: 40px;
     display: flex;
-    width: 90%;
+    align-items: center;
     border: 1px solid black;
-    margin-top: 10px;
+    margin-top: 1px;
+    width: 90%;
+    text-decoration: none;
+    font-size: 20px;
+    flex-grow: 1;
+    padding: 5px 10px 5px 10px;
 }
 
-.view-books-id{
+.view-books-id {
     align-items: center;
     justify-content: center;
     display: flex;
     flex-grow: 1;
 }
 
-.view-books-other{
+.view-books-other {
     width: 70%;
     flex-grow: 2;
     display: flex;
     flex-direction: column;
+}
+
+.view-showUsers-forAdmin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.view-showUsers-forAdmin > div {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    width: 90%;
+    text-decoration: none;
+    font-size: 20px;
+    flex-grow: 1;
+    padding: 5px 10px 5px 10px;
+    margin: 20px 0px 20px 0px;
+}
+
+.view-showUsers-forAdmin > div > p{
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    width: 10%;
+}
+.view-showUsers-forAdmin > a {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    margin-top: 1px;
+    width: 90%;
+    text-decoration: none;
+    font-size: 20px;
+    flex-grow: 1;
+    padding: 5px 10px 5px 10px;
+}
+
+.view-showUsers-forAdmin > a > div {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    width: 10%;
+}
+
+.view-showUsers-forAdmin > p {
+    flex-direction: row;
+    flex-grow: 1;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    margin-top: 1px;
+    width: 90%;
+    text-decoration: none;
+    font-size: 20px;
 }

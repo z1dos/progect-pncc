@@ -3,40 +3,50 @@
 if (app()->auth::user()->isAdmin()):
     ?>
     <h2><a href="<?= app()->route->getUrl('/addBooks') ?>">Добавить</a></h2>
-<div class="view-books-all">
+<div class="view-showUsers-forAdmin">
+    <div>
+        <p>ID </p>
+        <p>Название </p>
+        <p>Автор </p>
+        <p>Дата публикации </p>
+        <p>Издание </p>
+        <p>Цена </p>
+    </div>
             <?php
             foreach ($books as $book) {
                 echo '<div class="view-books">' .
-                    '<p class="view-books-id">' . $book->id . '</p>' .
-                    '<div class="view-books-other">' .
-                    '<p>Название: ' . $book->title . '</p>' .
-                    '<p>Автор: ' . $book->author . '</p>' .
-                    '<p>Дата публикации: ' . $book->the_year_of_publishing . '</p>' .
-                    '<p>Издание: ' . $book->is_it_a_new_edition . '</p>' .
-                    '<p>Описание: ' . $book->description . '</p>' .
-                    '<p>Цена: ' . $book->price . '</p>' .
-                    '</div>' .
+                    '<p>' . $book->id . '</p>' .
+                    '<p>' . $book->title . '</p>' .
+                    '<p>' . $book->author . '</p>' .
+                    '<p>' . $book->the_year_of_publishing . '</p>' .
+                    '<p>' . $book->is_it_a_new_edition . '</p>' .
+                    '<p>' . $book->price . '</p>' .
                     '</div>';
             }
             ?>
-</div>
 <?php
 else:
     ?>
-    <ol>
+    <div class="view-showUsers-forAdmin">
+        <div>
+            <p>Название </p>
+            <p>Автор </p>
+            <p>Дата публикации </p>
+            <p>Издание </p>
+            <p>Цена </p>
+        </div>
         <?php
         foreach ($books as $book) {
-            echo '<li>' .
-                '<p>Название: ' . $book->title . '</p>' .
-                '<p>Автор: ' . $book->author . '</p>' .
-                '<p>Дата публикации: ' . $book->the_year_of_publishing . '</p>' .
-                '<p>Издание: ' . $book->is_it_a_new_edition . '</p>' .
-                '<p>Описание: ' . $book->description . '</p>' .
-                '<p>Цена: ' . $book->price . '</p>' .
-                '</li>';
+            echo '<div class="view-books">' .
+                '<p>' . $book->title . '</p>' .
+                '<p>' . $book->author . '</p>' .
+                '<p>' . $book->the_year_of_publishing . '</p>' .
+                '<p>' . $book->is_it_a_new_edition . '</p>' .
+                '<p>' . $book->price . '</p>' .
+                '</div>';
         }
         ?>
-    </ol>
-<?php
+
+        <?php
 endif;
 ?>
