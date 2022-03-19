@@ -38,8 +38,14 @@ class Site
         return (new View())->render('site.profile', [
             'users' => $users,
             'library_cards' => $library_cards,
-            'books' => $books
+            'books' => $books,
         ]);
+    }
+
+    public function selfProfile(Request $request): string
+    {
+        $users = User::all();
+        return (new View())->render('site.selfProfile', ['users' => $users]);
     }
 
     public function addBooks(Request $request): string
@@ -56,7 +62,7 @@ class Site
         $books = Books::all();
         $library_cards = LibraryCard::all();
         if ($request->method === 'POST' && LibraryCard::create($request->all())) {
-            app()->route->redirect('/books');
+            app()->route->redirect('/showUsers');
         }
         return (new View())->render('site.addInLibraryCard', ['library_cards' => $library_cards, 'users' => $users, 'books' => $books]);
     }

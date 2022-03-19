@@ -3,7 +3,7 @@
 <ol>
     <?php
     foreach ($users as $user) {
-        echo '<li>' . $user->login . '<a href="/profile"> + </a>' .'</li>';
+        echo '<li>' . "<a href='/profile?id_reader=$user->login'> $user->login </a>" . '</li>';
     }
     ?>
 </ol>

@@ -19,14 +19,13 @@
         <?php
         elseif (app()->auth::user()->isAdmin()):
             ?>
-            <a href="<?= app()->route->getUrl('/profile') ?>">Профиль</a>
             <a href="<?= app()->route->getUrl('/showUsers') ?>">Пользователи</a>
             <a href="<?= app()->route->getUrl('/books') ?>">Книги</a>
             <a href="<?= app()->route->getUrl('/logout') ?>">Выход</a>
         <?php
         else:
             ?>
-            <a href="<?= app()->route->getUrl('/profile') ?>">Профиль</a>
+            <a href="<?= app()->route->getUrl('/selfProfile') ?>">Профиль</a>
             <a href="<?= app()->route->getUrl('/books') ?>">Книги</a>
             <a href="<?= app()->route->getUrl('/logout') ?>">Выход</a>
         <?php
