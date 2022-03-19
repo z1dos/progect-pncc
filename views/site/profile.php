@@ -7,7 +7,16 @@
             '<p>ID книги: ' . $library_card->id_book . '</p>' .
             '<p>Дата выдачи: ' . $library_card->date_of_receiving . '</p>' .
             '<p>Дата выдачи: ' . $library_card->delivery_date . '</p>' .
-            '<p>Сдано:' . $library_card->passed . '</p>';
+            '<p>Сдано:' . $library_card->passed .'</p>';
+        if (app()->auth::user()->isAdmin()){
+            echo '<form method="post">' .
+            '<select>' .
+            "<option selected>$library_card->passed</option>".
+            '<option>Да</option> ' .
+            '</select>' .
+                '<button>Поменять</button>' .
+            '</form>';
+        }
     }
     echo '<h2>Пользователь: ' . $library_card->id_reader . '<h2>';
     ?>

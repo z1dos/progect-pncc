@@ -5,7 +5,7 @@ use Src\Route;
 Route::add('GET', '/hello', [Controller\Site::class, 'hello'])
     ->middleware('auth');
 Route::add('GET', '/books', [Controller\Site::class, 'books']);
-Route::add('GET', '/profile', [Controller\Site::class, 'profile']);
+Route::add(['GET', 'POST'], '/profile', [Controller\Site::class, 'profile']);
 Route::add('GET', '/selfProfile', [Controller\Site::class, 'selfProfile']);
 Route::add('GET', '/showUsers', [Controller\Site::class, 'showUsers'])
     ->middleware('auth');
