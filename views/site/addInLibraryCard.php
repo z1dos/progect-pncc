@@ -18,6 +18,7 @@
 //                        $book->demand++;
 //                    }
 //                    countDemand($book);
+                    echo $book->demand++;
                 }
                 ?>
             </select></p>
