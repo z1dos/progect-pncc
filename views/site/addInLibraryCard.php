@@ -14,11 +14,15 @@
                 <?php
                 foreach ($books as $book ) {
                     echo '<option >' . $book->id  . '</option >';
+//                    function countDemand($book){
+//                        $book->demand++;
+//                    }
+//                    countDemand($book);
                 }
                 ?>
             </select></p>
         <p>Дата выдачи <input type="date" name="date_of_receiving"></p>
         <p>Дата сдачи <input type="date" name="delivery_date"></p>
-        <button>Добаить</button>
+        <button>Добавить</button>
     </form>
 </div>

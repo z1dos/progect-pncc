@@ -8,7 +8,7 @@
         <p>Сдано </p>
         <?php
         if (app()->auth::user()->isAdmin()) {
-            echo '<p>Поменять </p>';
+            echo '<p>Подтверждение </p>';
         }
         ?>
     </div>
@@ -16,20 +16,24 @@
 <div class="view-profile">
     <?php
     foreach ($library_cards as $library_card) {
+        $passed = $library_card->passed;
         echo
             '<div>' .
             '<p>' . $library_card->id_book . '</p>' .
             '<p>' . $library_card->date_of_receiving . '</p>' .
             '<p>' . $library_card->delivery_date . '</p>' .
-            '<p>' . $library_card->passed . '</p>';
+            '<p>' . $passed . '</p>';
         if (app()->auth::user()->isAdmin()) {
-            echo '<form method="post">' .
-                '<select>' .
-                "<option selected>$library_card->passed</option>" .
-                '<option>Да</option> ' .
-                '</select>' .
-                '<button>Поменять</button>' .
-                '</form>';
+            if ($passed == 'Нет'){
+                echo
+                "<form method='post'>
+                <input name='passed' value='$passed'>
+                <button>Поменять</button>
+                </form>";
+            }
+            if ($passed == 'Да'){
+                echo "<p>Сдано</p>";
+            }
         }
         echo '</div>';
     }
