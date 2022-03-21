@@ -63,6 +63,11 @@ class Route
         return $this->prefix . $url;
     }
 
+    public function getPrefix(): string
+    {
+        return $this->prefix;
+    }
+
     //Добавление middlewares для текущего маршрута
     public function middleware(...$middlewares): self
     {
