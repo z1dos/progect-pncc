@@ -2,13 +2,10 @@
 
 namespace Controller;
 
-use Model\Books;
-use Model\LibraryCard;
 use Model\Post;
-use Model\PublishingHouse;
+use Model\User;
 use Src\View;
 use Src\Request;
-use Model\User;
 use Src\Auth\Auth;
 
 class Site
@@ -17,60 +14,6 @@ class Site
     {
         $posts = Post::all();
         return (new View())->render('site.post', ['posts' => $posts]);
-    }
-
-    public function books(Request $request): string
-    {
-        $books = Books::all();
-        return (new View())->render('site.books', ['books' => $books]);
-    }
-
-    public function showUsers(Request $request): string
-    {
-        $users = User::all();
-        return (new View())->render('site.showUsers', ['users' => $users]);
-    }
-
-    public function profile(Request $request): string
-    {
-        $library_cards = LibraryCard::where('id_reader', $request->id_reader)->get();
-        $books = Books::all();
-        $users = User::all();
-        return (new View())->render('site.profile', [
-            'users' => $users,
-            'library_cards' => $library_cards,
-            'books' => $books,
-        ]);
-    }
-
-    public function selfProfile(Request $request): string
-    {
-        $users = User::all();
-        return (new View())->render('site.selfProfile', ['users' => $users]);
-    }
-
-    public function addBooks(Request $request): string
-    {
-        $books = Books::all();
-        $publishing_house = PublishingHouse::all();
-        if ($request->method === 'POST' && PublishingHouse::create($request->all())) {
-            app()->route->redirect('/addBooks');
-        }
-        if ($request->method === 'POST' && Books::create($request->all())) {
-            app()->route->redirect('/books');
-        }
-        return (new View())->render('site.addBook', ['books' => $books, 'publishing_house' => $publishing_house]);
-    }
-
-    public function addInLibraryCard(Request $request): string
-    {
-        $users = User::all();
-        $books = Books::all();
-        $library_cards = LibraryCard::all();
-        if ($request->method === 'POST' && LibraryCard::create($request->all())) {
-            app()->route->redirect('/showUsers');
-        }
-        return (new View())->render('site.addInLibraryCard', ['library_cards' => $library_cards, 'users' => $users, 'books' => $books]);
     }
 
     public function hello(): string
