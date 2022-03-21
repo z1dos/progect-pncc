@@ -27,10 +27,4 @@ class ViewProfiles
             'books' => $books,
         ]);
     }
-
-    public function showUsers(Request $request): string
-    {
-        $users = User::all();
-        return (new View())->render('site.showUsers', ['users' => $users]);
-    }
 }
