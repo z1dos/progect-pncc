@@ -1,5 +1,5 @@
 <h2>Регистрация нового пользователя</h2>
-<h3><?= $messageAddBook ?? ''; ?></h3>
+<h3><?= $message ?? ''; ?></h3>
 <div class="view-form">
     <form method="post">
         <p>Фамилия <input type="text" name="surname"></p>
