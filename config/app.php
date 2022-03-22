@@ -12,6 +12,7 @@ return [
     'validators' => [
         'required' => \Validators\RequireValidator::class,
         'unique' => \Validators\UniqueValidator::class,
-        'phoneNumber' => \Validators\CheckPhoneNumber::class
+        'phoneNumber' => \Validators\CheckPhoneNumber::class,
+        'nameVal' => \Validators\UpNameValidator::class,
     ]
 ];

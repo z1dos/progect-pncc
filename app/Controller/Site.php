@@ -27,9 +27,9 @@ class Site
         if ($request->method === 'POST') {
 
             $validator = new Validator($request->all(), [
-                'name' => ['required'],
-                'surname' => ['required'],
-                'patronymic' => ['required'],
+                'name' => ['required', 'nameVal'],
+                'surname' => ['required', 'nameVal'],
+                'patronymic' => ['required', 'nameVal'],
                 'login' => ['required', 'unique:users,login'],
                 'password' => ['required'],
                 'address' => ['required'],
@@ -37,7 +37,8 @@ class Site
             ], [
                 'required' => 'Поле :field пусто',
                 'unique' => 'Поле :field должно быть уникально',
-                'phoneNumber' => 'Поле :field должно начинаться с +7 и равно 12 символам'
+                'phoneNumber' => 'Поле :field должно начинаться с +7 и равно 12 символам',
+                'nameVal' => 'Поле :field должно начинаться с большой буквы',
             ]);
 
             if($validator->fails()){
