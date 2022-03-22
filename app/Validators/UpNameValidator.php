@@ -11,6 +11,6 @@ class UpNameValidator extends AbstractValidator
     public function rule(): bool
     {
         $pN = $this->value;
-        return preg_match("/[А-Я]/",$pN);
+        return preg_match("/^([А-ЯЁ]{1}[а-яё]*)$/u",$pN);
     }
 }
