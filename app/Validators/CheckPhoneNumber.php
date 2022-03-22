@@ -11,6 +11,6 @@ class CheckPhoneNumber extends AbstractValidator
     public function rule(): bool
     {
         $pN = strlen($this->value) < 13 && strlen($this->value) > 11;
-        return !empty($pN);
+        return $pN;
     }
 }
