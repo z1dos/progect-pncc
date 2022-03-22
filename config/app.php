@@ -9,7 +9,10 @@ return [
         'auth' => \Middlewares\AuthMiddleware::class,
         'isAdmin' => \Middlewares\IsAdminMiddleware::class,
     ],
-        'validators' => [
+    'routeAppMiddleware' => [
+        'trim' => \Middlewares\TrimMiddleware::class,
+    ],
+    'validators' => [
         'required' => \Validators\RequireValidator::class,
         'unique' => \Validators\UniqueValidator::class,
         'phoneNumber' => \Validators\CheckPhoneNumber::class,
