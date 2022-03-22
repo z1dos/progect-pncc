@@ -9,11 +9,12 @@ return [
         'auth' => \Middlewares\AuthMiddleware::class,
         'isAdmin' => \Middlewares\IsAdminMiddleware::class,
     ],
-    'validators' => [
+        'validators' => [
         'required' => \Validators\RequireValidator::class,
         'unique' => \Validators\UniqueValidator::class,
         'phoneNumber' => \Validators\CheckPhoneNumber::class,
         'nameVal' => \Validators\UpNameValidator::class,
         'addressCheck' => \Validators\AddressValidator::class,
+        'loginRegex' => \Validators\LoginValidator::class,
     ]
 ];

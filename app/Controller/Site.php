@@ -27,19 +27,20 @@ class Site
         if ($request->method === 'POST') {
 
             $validator = new Validator($request->all(), [
-                'name' => ['required', 'nameVal'],
                 'surname' => ['required', 'nameVal'],
+                'name' => ['required', 'nameVal'],
                 'patronymic' => ['required', 'nameVal'],
-                'login' => ['required', 'unique:users,login'],
-                'password' => ['required'],
                 'address' => ['required', 'addressCheck'],
                 'phone_number' => ['phoneNumber', 'required'],
+                'login' => ['required', 'loginRegex','unique:users,login'],
+                'password' => ['required'],
             ], [
                 'required' => 'Поле :field пусто',
                 'unique' => 'Поле :field должно быть уникально',
                 'phoneNumber' => 'Поле :field должно начинаться с +7 и равно 12 символам',
                 'nameVal' => 'Поле :field должно начинаться с большой буквы',
                 'addressCheck' => 'Поле :field должно записываться в форме АдресНомер',
+                'loginRegex' => 'В поле :field можно использовать строчные буквы, символ _. Длина от 3 до 16 символов',
             ]);
 
             if($validator->fails()){
