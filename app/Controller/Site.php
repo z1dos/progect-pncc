@@ -33,7 +33,7 @@ class Site
                 'login' => ['required', 'unique:users,login'],
                 'password' => ['required'],
                 'address' => ['required'],
-                'phone_number' => ['phoneNumber'],
+                'phone_number' => ['phoneNumber', 'required'],
             ], [
                 'required' => 'Поле :field пусто',
                 'unique' => 'Поле :field должно быть уникально',
