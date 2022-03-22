@@ -18,7 +18,7 @@ class AddBooks
             $validator = new Validator($request->all(), [
                 'author' => ['required', 'AuthorRegex'],
                 'title' => ['required', 'nameVal'],
-                'the_year_of_publishing' => ['required'],
+                'the_year_of_publishing' => ['required', 'DataRegex'],
                 'is_it_a_new_edition' => ['required'],
                 'description' => ['required'],
                 'price' => ['required'],
@@ -26,6 +26,7 @@ class AddBooks
                 'AuthorRegex' => 'Поле :field должно записываться Автор и инициалы',
                 'nameVal' => 'Поле :field должно начинаться с большой буквы',
                 'required' => 'Поле :field пусто',
+                'DataRegex' => 'Поле :field неверно',
             ]);
 
             if($validator->fails()){

@@ -23,5 +23,6 @@ return [
         'loginRegex' => \Validators\LoginValidator::class,
         'AuthorRegex' => \Validators\AuthorValidator::class,
         'PasswordRegex' => \Validators\PasswordValidator::class,
+        'DataRegex' => \Validators\DataValidator::class,
     ]
 ];
