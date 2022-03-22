@@ -33,10 +33,11 @@ class Site
                 'login' => ['required', 'unique:users,login'],
                 'password' => ['required'],
                 'address' => ['required'],
-                'phone_number' => ['required'],
+                'phone_number' => ['phoneNumber'],
             ], [
                 'required' => 'Поле :field пусто',
-                'unique' => 'Поле :field должно быть уникально'
+                'unique' => 'Поле :field должно быть уникально',
+                'phoneNumber' => 'Поле :field должно начинаться с +7 и равно 12 символам'
             ]);
 
             if($validator->fails()){
