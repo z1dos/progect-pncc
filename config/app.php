@@ -24,5 +24,6 @@ return [
         'AuthorRegex' => \Validators\AuthorValidator::class,
         'PasswordRegex' => \Validators\PasswordValidator::class,
         'DataRegex' => \Validators\DataValidator::class,
+        'NumberRegex' => \Validators\NumberValidator::class,
     ]
 ];

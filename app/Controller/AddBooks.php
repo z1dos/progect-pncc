@@ -21,12 +21,13 @@ class AddBooks
                 'the_year_of_publishing' => ['required', 'DataRegex'],
                 'is_it_a_new_edition' => ['required'],
                 'description' => ['required'],
-                'price' => ['required'],
+                'price' => ['required', 'NumberRegex'],
             ], [
                 'AuthorRegex' => 'Поле :field должно записываться Автор и инициалы',
                 'nameVal' => 'Поле :field должно начинаться с большой буквы',
                 'required' => 'Поле :field пусто',
                 'DataRegex' => 'Поле :field неверно',
+                'NumberRegex' => 'Поле :field должно состоять только из цифр',
             ]);
 
             if($validator->fails()){
