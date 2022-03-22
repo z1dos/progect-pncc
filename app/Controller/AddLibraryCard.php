@@ -42,7 +42,7 @@ class AddLibraryCard
         }
         return (new View())->render('site.addInLibraryCard', [
             'library_cards' => $library_cards,
-            'users' => $users, 
+            'users' => $users,
             'books' => $books]);
     }
 }
