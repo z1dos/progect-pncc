@@ -3,6 +3,7 @@
 
 <div class="view-form">
     <form method="post">
+        <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
         <p>Логин пользователя <select name="id_reader">
                 <?php
                 foreach ($users as $user ) {

@@ -2,6 +2,7 @@
 <h3><?= $message ?? ''; ?></h3>
 <div class="view-form">
     <form method="post">
+        <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
         <p>Фамилия <input type="text" name="surname"></p>
         <p>Имя <input type="text" name="name"></p>
         <p>Отчество <input type="text" name="patronymic"></p>

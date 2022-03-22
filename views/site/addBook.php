@@ -2,6 +2,7 @@
 <h3><?= $message ?? ''; ?></h3>
 <div class="view-form">
     <form method="post">
+        <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
         <p>Автор <input type="text" name="author"></p>
         <p>Название <input type="text" name="title"></p>
         <p>Год публикации <input type="date" name="the_year_of_publishing"></p>

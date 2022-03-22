@@ -27,6 +27,7 @@
             if ($passed == 'Нет'){
                 echo
                 "<form method='post'>
+                <input name='csrf_token' type='hidden' value='<?= app()->auth::generateCSRF() ?>'/>
                 <input name='passed' value='$passed'>
                 <button>Поменять</button>
                 </form>";
