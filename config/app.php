@@ -16,5 +16,7 @@ return [
         'nameVal' => \Validators\UpNameValidator::class,
         'addressCheck' => \Validators\AddressValidator::class,
         'loginRegex' => \Validators\LoginValidator::class,
+        'AuthorRegex' => \Validators\AuthorValidator::class,
+        'PasswordRegex' => \Validators\PasswordValidator::class,
     ]
 ];

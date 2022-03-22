@@ -33,14 +33,15 @@ class Site
                 'address' => ['required', 'addressCheck'],
                 'phone_number' => ['phoneNumber', 'required'],
                 'login' => ['required', 'loginRegex','unique:users,login'],
-                'password' => ['required'],
+                'password' => ['required', 'PasswordRegex'],
             ], [
                 'required' => 'Поле :field пусто',
                 'unique' => 'Поле :field должно быть уникально',
                 'phoneNumber' => 'Поле :field должно начинаться с +7 и равно 12 символам',
                 'nameVal' => 'Поле :field должно начинаться с большой буквы',
                 'addressCheck' => 'Поле :field должно записываться в форме АдресНомер',
-                'loginRegex' => 'В поле :field можно использовать строчные буквы, символ _. Длина от 3 до 16 символов',
+                'loginRegex' => 'В поле :field можно использовать строчные буквы, цифры, символ _. Длина от 3 до 16 символов',
+                'PasswordRegex' => 'В поле :field можно использовать строчные буквы, цифры, символы _ -. Длина от 5 до 20 символов',
             ]);
 
             if($validator->fails()){

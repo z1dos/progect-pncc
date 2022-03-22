@@ -6,7 +6,7 @@ use Src\Validator\AbstractValidator;
 
 class UpNameValidator extends AbstractValidator
 {
-    protected string $message = 'Field :field is Address';
+    protected string $message = 'Field :field is login';
 
     public function rule(): bool
     {
