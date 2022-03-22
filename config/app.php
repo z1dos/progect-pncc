@@ -14,5 +14,6 @@ return [
         'unique' => \Validators\UniqueValidator::class,
         'phoneNumber' => \Validators\CheckPhoneNumber::class,
         'nameVal' => \Validators\UpNameValidator::class,
+        'addressCheck' => \Validators\AddressValidator::class,
     ]
 ];
