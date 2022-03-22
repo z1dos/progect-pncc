@@ -2,6 +2,7 @@
 
 namespace Controller;
 
+use Src\Validator\Validator;
 use Model\PublishingHouse;
 use Src\Request;
 use Src\View;
@@ -10,10 +11,24 @@ class AddPublishingHouse
 {
     public function addPublishingHouse(Request $request): string
     {
-        $publishing_house = PublishingHouse::all();
-        if ($request->method === 'POST' && PublishingHouse::create($request->all())) {
-            app()->route->redirect('/addBooks');
+        if ($request->method === 'POST'){
+
+            $validator = new Validator($request->all(), [
+                'title_publishing_house' => ['required', 'unique:publishing_houses,title_publishing_house'],
+            ], [
+                'required' => 'Поле :field пусто',
+                'unique' => 'Поле :field должно быть уникально'
+            ]);
+
+            if($validator->fails()){
+                return new View('site.addPublishingHouse',
+                    ['message' => json_encode($validator->errors(), JSON_UNESCAPED_UNICODE)]);
+            }
+
+            if(PublishingHouse::create($request->all())) {
+                app()->route->redirect('/addPublishingHouse');
+            }
         }
-        return (new View())->render('site.addPublishingHouse', ['publishing_house' => $publishing_house]);
+        return (new View())->render('site.addPublishingHouse');
     }
 }
