@@ -20,7 +20,7 @@ class AddBooks
                 'title' => ['required', 'nameVal'],
                 'the_year_of_publishing' => ['required', 'DataRegex'],
                 'is_it_a_new_edition' => ['required'],
-                'description' => ['required'],
+                'description' => ['required', 'D-onValidator'],
                 'price' => ['required', 'NumberRegex'],
             ], [
                 'AuthorRegex' => 'Поле :field должно записываться например: Толстой Л.Н.',
@@ -28,6 +28,7 @@ class AddBooks
                 'required' => 'Поле :field пусто',
                 'DataRegex' => 'Поле :field неверно',
                 'NumberRegex' => 'Поле :field должно состоять только из цифр',
+                'D-onValidator' => 'Поле :field Начинается с большой буквы, можно использовать пробел, символы _-, предложение заканчивается точкой)('
             ]);
 
             if($validator->fails()){

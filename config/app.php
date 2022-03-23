@@ -25,5 +25,6 @@ return [
         'PasswordRegex' => \Validators\PasswordValidator::class,
         'DataRegex' => \Validators\DataValidator::class,
         'NumberRegex' => \Validators\NumberValidator::class,
+        'D-onValidator' => \Validators\DonValidator::class,
     ]
 ];
