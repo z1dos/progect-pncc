@@ -14,8 +14,6 @@ class ProfileEdit
     public function profileEdit(Request $request): string
     {
         $library_cards = LibraryCard::where('id', $request->id)->get();
-        $books = Books::all();
-        $users = User::all();
         if ($request->method === 'POST'){
 
             $validator = new Validator($request->all(), [
@@ -27,19 +25,16 @@ class ProfileEdit
             if($validator->fails()){
                 return new View('site.profileEdit',
                     [
-                        'books' => $books,
                         'library_cards' => $library_cards,
                         'message' => json_encode($validator->errors(), JSON_UNESCAPED_UNICODE),]);
             }
 
-            if (LibraryCard::create($request->all())) {
+            if (LibraryCard::where('id', $request->id)->update($request->all())) {
                 app()->route->redirect('/profile');
             }
         }
         return (new View())->render('site.profileEdit', [
-            'users' => $users,
             'library_cards' => $library_cards,
-            'books' => $books,
         ]);
     }
 }
