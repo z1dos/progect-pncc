@@ -11,6 +11,6 @@ class AuthorValidator extends AbstractValidator
     public function rule(): bool
     {
         $pN = $this->value;
-        return preg_match("/[А-Я]/",$pN);
+        return preg_match("/^([А-ЯЁ]{1}[а-яё]*\s[А-ЯЁ]{1}.[А-ЯЁ]{1}.)$/u",$pN);
     }
 }
