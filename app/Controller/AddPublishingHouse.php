@@ -14,10 +14,16 @@ class AddPublishingHouse
         if ($request->method === 'POST'){
 
             $validator = new Validator($request->all(), [
-                'title_publishing_house' => ['required', 'unique:publishing_houses,title_publishing_house'],
+                'title_publishing_house' => [
+                    'required',
+                    'unique:publishing_houses,title_publishing_house',
+                    'PubHouseRegex',
+                ],
             ], [
                 'required' => 'Поле :field пусто',
-                'unique' => 'Поле :field должно быть уникально'
+                'unique' => 'Поле :field должно быть уникально',
+                'PubHouseRegex' => 'Поле :field должно начинаться с боьшой буквы, можно ставить пробел, можно использовать символы _!#'
+
             ]);
 
             if($validator->fails()){
