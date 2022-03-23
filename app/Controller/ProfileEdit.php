@@ -17,6 +17,7 @@ class ProfileEdit
         $books = Books::all();
         $users = User::all();
         if ($request->method === 'POST'){
+
             $validator = new Validator($request->all(), [
                 'passed' => ['required'],
             ], [
@@ -24,16 +25,15 @@ class ProfileEdit
             ]);
 
             if($validator->fails()){
-                return new View('site.profile',
+                return new View('site.profileEdit',
                     [
-                        'users' => $users,
-                        'library_cards' => $library_cards,
                         'books' => $books,
+                        'library_cards' => $library_cards,
                         'message' => json_encode($validator->errors(), JSON_UNESCAPED_UNICODE),]);
             }
 
             if (LibraryCard::create($request->all())) {
-                app()->route->redirect('/showUsers');
+                app()->route->redirect('/profile');
             }
         }
         return (new View())->render('site.profileEdit', [

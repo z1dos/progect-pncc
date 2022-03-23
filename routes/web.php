@@ -10,8 +10,8 @@ Route::add('GET',  '/profile', [Controller\ViewProfiles::class, 'profile'])
     ->middleware('auth');
 Route::add('GET', '/selfProfile', [Controller\ViewProfiles::class, 'selfProfile'])
     ->middleware('auth');
-Route::add('GET', '/profileEdit', [Controller\ProfileEdit::class, 'profileEdit'])
-    ->middleware('auth');
+Route::add(['GET', 'POST'], '/profileEdit', [Controller\ProfileEdit::class, 'profileEdit'])
+    ->middleware('isAdmin');
 Route::add('GET', '/showUsers', [Controller\ViewAllUsers::class, 'showUsers'])
     ->middleware('isAdmin');
 //Route::add('GET', '/showUsers?id=', [Controller\Site::class, 'showUsersFOrId']);
