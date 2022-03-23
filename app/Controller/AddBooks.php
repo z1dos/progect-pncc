@@ -23,7 +23,7 @@ class AddBooks
                 'description' => ['required'],
                 'price' => ['required', 'NumberRegex'],
             ], [
-                'AuthorRegex' => 'Поле :field должно записываться Автор и инициалы',
+                'AuthorRegex' => 'Поле :field должно записываться например: Толстой Л.Н.',
                 'nameVal' => 'Поле :field должно начинаться с большой буквы',
                 'required' => 'Поле :field пусто',
                 'DataRegex' => 'Поле :field неверно',
