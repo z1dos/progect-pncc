@@ -26,5 +26,6 @@ return [
         'DataRegex' => \Validators\DataValidator::class,
         'NumberRegex' => \Validators\NumberValidator::class,
         'D-onValidator' => \Validators\DonValidator::class,
+        'TitleRegex' => \Validators\TitleValidator::class,
     ]
 ];

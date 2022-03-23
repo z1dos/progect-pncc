@@ -17,7 +17,7 @@ class AddBooks
         if ($request->method === 'POST') {
             $validator = new Validator($request->all(), [
                 'author' => ['required', 'AuthorRegex'],
-                'title' => ['required', 'nameVal'],
+                'title' => ['required', 'TitleRegex'],
                 'the_year_of_publishing' => ['required', 'DataRegex'],
                 'is_it_a_new_edition' => ['required'],
                 'description' => ['required', 'D-onValidator'],
@@ -28,7 +28,8 @@ class AddBooks
                 'required' => 'Поле :field пусто',
                 'DataRegex' => 'Поле :field неверно',
                 'NumberRegex' => 'Поле :field должно состоять только из цифр',
-                'D-onValidator' => 'Поле :field Начинается с большой буквы, можно использовать пробел, символы _-, предложение заканчивается точкой)('
+                'D-onValidator' => 'Поле :field начинается с большой буквы, можно использовать пробел, символы _-, предложение заканчивается точкой',
+                'TitleRegex' => 'Поле :field начинается с большой буквы, можно использовать пробел, символ -.'
             ]);
 
             if($validator->fails()){
