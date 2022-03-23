@@ -158,6 +158,13 @@ h2 {
     width: 10%;
 }
 
+.view-profile > div > a{
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    width: 10%;
+}
+
 .view-profile > div > form{
     display: flex;
     justify-content: center;

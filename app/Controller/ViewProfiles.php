@@ -6,6 +6,7 @@ use Model\Books;
 use Model\LibraryCard;
 use Model\User;
 use Src\Request;
+use Src\Validator\Validator;
 use Src\View;
 
 class ViewProfiles
