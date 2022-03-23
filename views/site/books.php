@@ -15,7 +15,7 @@ if (app()->auth::user()->isAdmin()):
             <?php
             foreach ($books as $book) {
                 echo '<div class="view-books">' .
-                    '<p>' . $book->id . '</p>' .
+                    '<p>' . $book->id  .'</p>' .
                     '<p>' . $book->title . '</p>' .
                     '<p>' . $book->author . '</p>' .
                     '<p>' . $book->the_year_of_publishing . '</p>' .
