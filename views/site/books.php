@@ -17,7 +17,7 @@ if (app()->auth::user()->isAdmin()):
                 echo '<div class="view-books">' .
                     '<p>' . $book->id  .'</p>' .
                     '<p>' . $book->title . '</p>' .
-                    '<p>' . $book->author . '</p>' .
+                    '<p>' . "<a href='viewAuthorBooks?author=$book->author'>" . $book->author . '</a>' . '</p>' .
                     '<p>' . $book->the_year_of_publishing . '</p>' .
                     '<p>' . $book->is_it_a_new_edition . '</p>' .
                     '<p>' . $book->price . '</p>' .
@@ -39,7 +39,7 @@ else:
         foreach ($books as $book) {
             echo '<div class="view-books">' .
                 '<p>' . $book->title . '</p>' .
-                '<p>' . $book->author . '</p>' .
+                '<p>' . "<a href='viewAuthorBooks?author=$book->author'>" . $book->author . '</a>' . '</p>' .
                 '<p>' . $book->the_year_of_publishing . '</p>' .
                 '<p>' . $book->is_it_a_new_edition . '</p>' .
                 '<p>' . $book->price . '</p>' .

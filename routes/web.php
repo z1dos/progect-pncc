@@ -6,6 +6,8 @@ Route::add('GET', '/hello', [Controller\Site::class, 'hello'])
     ->middleware('auth');
 Route::add('GET', '/books', [Controller\VIewBooks::class, 'books'])
     ->middleware('auth');
+Route::add('GET', '/viewAuthorBooks', [Controller\ViewAuthorBooks::class, 'viewAuthorBooks'])
+    ->middleware('auth');
 Route::add('GET',  '/profile', [Controller\ViewProfiles::class, 'profile'])
     ->middleware('auth');
 Route::add('GET', '/selfProfile', [Controller\ViewProfiles::class, 'selfProfile'])
