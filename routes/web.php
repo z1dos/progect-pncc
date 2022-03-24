@@ -16,6 +16,8 @@ Route::add(['GET', 'POST'], '/profileEdit', [Controller\ProfileEdit::class, 'pro
     ->middleware('isAdmin');
 Route::add('GET', '/showUsers', [Controller\ViewAllUsers::class, 'showUsers'])
     ->middleware('isAdmin');
+Route::add('GET', '/viewReaderBook', [Controller\ViewReaderBook::class, 'ViewShowUsers'])
+    ->middleware('isAdmin');
 //Route::add('GET', '/showUsers?id=', [Controller\Site::class, 'showUsersFOrId']);
 //Route::add('GET', '/posts', [Controller\Site::class, 'index']);
 Route::add(['GET', 'POST'], '/addBooks', [Controller\AddBooks::class, 'addBooks'])

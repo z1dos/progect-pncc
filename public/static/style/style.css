@@ -215,3 +215,9 @@ h2 {
     justify-content: center;
 }
 /*form edit*/
+
+.view-books-reader {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}

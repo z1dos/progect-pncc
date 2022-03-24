@@ -23,6 +23,11 @@ if (app()->auth::user()->isAdmin()):
                     '<p>' . $book->price . '</p>' .
                     '</div>';
             }
+            echo '<h2>Книги у читателя по id</h2>';
+            foreach ($libraryCards as $libraryCard){
+               echo
+                   '<div class="view-books-reader">' . "<a href='viewReaderBook?id_book=$libraryCard->id_book'>" . $libraryCard->id_book . '</a>' . '</div>';
+            }
             ?>
 <?php
 else:
