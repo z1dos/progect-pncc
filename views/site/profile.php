@@ -1,5 +1,4 @@
-<h1>Профиль <?= app()->auth->user()->login ?? ''; ?></h1>
-<h2>Мой читательский билет</h2>
+<h2>Читательский билет</h2>
 <div class="view-showUsers-forAdmin">
     <div>
         <?php
