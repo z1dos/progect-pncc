@@ -6,7 +6,7 @@ use Src\Validator\AbstractValidator;
 
 class AddressValidator extends AbstractValidator
 {
-    protected string $message = 'Field :field is phoneNumber';
+    protected string $message = 'Field :field is address';
 
     public function rule(): bool
     {
