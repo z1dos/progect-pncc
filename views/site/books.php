@@ -26,7 +26,7 @@ if (app()->auth::user()->isAdmin()):
             echo '<h2>Книги у читателя по id</h2>';
             foreach ($libraryCards as $libraryCard){
                echo
-                   '<div class="view-books-reader"> Книга по ID- ' . "<a href='viewReaderBook?id_book=$libraryCard->id_book'>" . $libraryCard->id_book . '</a>' . '</div>';
+                   '<div class="view-books-reader"> ID - ' . "<a href='viewReaderBook?id_book=$libraryCard->id_book'>" . $libraryCard->id_book . '</a>' . '</div>';
             }
             ?>
 <?php
