@@ -23,10 +23,10 @@ if (app()->auth::user()->isAdmin()):
                     '<p>' . $book->price . '</p>' .
                     '</div>';
             }
-            echo '<h2>Книги у читателя по id</h2>';
+            echo '<h2>Популярные книги</h2>';
             foreach ($libraryCards as $libraryCard){
                echo
-                   '<div class="view-books-reader"> ID - ' . "<a href='viewReaderBook?id_book=$libraryCard->id_book'>" . $libraryCard->id_book . '</a>' . '</div>';
+                   '<div class="view-books-reader"> Посмотреть читатателей книги ID-' . "<a href='viewReaderBook?id_book=$libraryCard->id_book'>" . $libraryCard->id_book . '</a>' . '</div>';
             }
             ?>
 <?php
