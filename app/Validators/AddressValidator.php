@@ -11,6 +11,6 @@ class AddressValidator extends AbstractValidator
     public function rule(): bool
     {
         $pN = $this->value;
-        return preg_match("/^([А-ЯЁ]{1}[а-яА-Я0-9]*)$/u",$pN);
+        return preg_match("/^([А-ЯЁ]{1}[а-яА-Я0-9_\-\s]*)$/u",$pN);
     }
 }
